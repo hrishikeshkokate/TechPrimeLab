@@ -1,0 +1,36 @@
+<body>
+  <div class="background-container">
+    <img src="../../assets/images/Logo.svg" alt="Symbol Image" class="symbol-image">
+    <p class="project-management-text">Online Project Management</p>
+    <div class="login-container">
+      <h4>Login to get started</h4>
+      <form [formGroup]="loginForm">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" required [class.is-invalid]="email?.invalid && email?.touched" class="form-control"
+          id="exampleFormControlInput1" formControlName="email" placeholder="Email">
+        <div *ngIf="email?.invalid && email?.touched">
+          <small class="text-danger" *ngIf="email?.errors?.['required']">email is required</small>
+        </div>
+
+        <label for="password" class="form-label">Password</label>
+        <input type="{{ isPasswordVisible() }}" required [class.is-invalid]="password?.invalid && password?.touched"
+          class="form-control" id="exampleFormControlInput1" formControlName="password" placeholder="Password" />
+        <img src="../../assets/images/hide-password.svg" alt="View Password" class="view-password-icon"
+          (click)="togglePasswordVisibility()" />
+        <div *ngIf="password?.invalid && password?.touched">
+          <small class="text-danger" *ngIf="password?.errors?.['required']">password is required</small>
+        </div>
+
+        <div class="forgot-password">
+          <a href="#">Forgot password?</a>
+        </div><br>
+
+
+        <button type="submit" *ngIf="!isUpdatebtn" [disabled]="loginForm.invalid" (click)="loginUser()">Login</button>
+      </form>
+      <h4 *ngIf="isInvalidCredentials" class="error-message">Invalid credentials.</h4>
+    </div>
+
+  </div>
+</body>
+

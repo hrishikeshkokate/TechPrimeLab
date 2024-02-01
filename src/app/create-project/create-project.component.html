@@ -1,0 +1,149 @@
+<header class="col-md-12 p-0">
+  <nav class="side-navbar shadow">
+    <div routerLink="/dashboard" routerLinkActive="rectangle2" class="rectangle"></div>
+    <div routerLink="/dashboard" routerLinkActive="dashboard-logo2" class="dashboard-logo"></div>
+
+    <div routerLink="/project-list" routerLinkActive="rectangle2" class="rectangle rectangle4"></div>
+    <div routerLink="/project-list" routerLinkActive="plist-logo2" class="plist-logo"></div>
+
+    <div class="h-line"></div>
+
+    <div routerLink="/create-project" routerLinkActive="rectangle2" class="rectangle rectangle3"></div>
+    <div routerLink="/create-project" routerLinkActive="cp-logo2" class="cp-logo"></div>
+
+    <div (click)="logout()" class="logout-logo"></div>
+  </nav>
+  <nav class="top-navbar">
+    <p class="heading"><img src="../../assets/images/back arrow.svg" width="8px" alt="">&nbsp;&nbsp;Create Project&nbsp;&nbsp;</p>
+    <div (click)="logout()" class="toplogout-logo"></div>
+  </nav>
+</header>
+
+<body class="new-page">
+  <div class="header-container">
+    <!-- Header content goes here -->
+    <h1></h1>
+  </div>
+  <img src="../../assets/images/Logo.svg" alt="Symbol Image" class="symbol-image">
+  <div class="main-section">
+
+    <form class="row g-3 needs-validation" [formGroup]="createForm" >
+      <div class="row">
+        <div class="col-7">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required [class.is-invalid]="projectName?.invalid && projectName?.touched" formControlName="projectName" placeholder="Enter Project Theme"></textarea>
+            <div *ngIf="projectName?.invalid && projectName?.touched">
+              <small class="text-danger" *ngIf="projectName?.errors?.['required']">Project name is required</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-floating">
+            <button type="submit" class="btn btn-primary btn-lg" (click)="saveProject()">Save Project</button>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="reason" class="form-label">Reason</label>
+          <select class="form-select" required [class.is-invalid]="reason?.invalid && reason?.touched" formControlName="reason" aria-label="Default select example">
+            <option *ngFor="let string of reasonList" [value]="string">{{string}}</option>
+            <!-- <option value="Dealership">Dealership</option>
+            <option value="Transport">Transport</option> -->
+          </select>
+          <div *ngIf="reason?.invalid && reason?.touched">
+            <small class="text-danger" *ngIf="reason?.errors?.['required']">Reason is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="type" class="form-label">Type</label>
+          <select class="form-select" required [class.is-invalid]="type?.invalid && type?.touched" formControlName="type" aria-label="Default select example">
+            <option *ngFor="let string of typeList" [value]="string">{{string}}</option>
+            <!-- <option value="External">External</option>
+            <option value="Vendor">Vendor</option> -->
+          </select>
+          <div *ngIf="type?.invalid && type?.touched">
+            <small class="text-danger" *ngIf="type?.errors?.['required']">Type is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="division" class="form-label">Division</label>
+          <select class="form-select" required [class.is-invalid]="division?.invalid && division?.touched" formControlName="division" aria-label="Default select example">
+            <option *ngFor="let string of divisionList">{{string}}</option>
+            <!-- <option </option> -->
+            <!-- <option value="Pumps">Pumps</option>
+            <option value="Glass">Glass</option>
+            <option value="Water Heater">Water Heater</option> -->
+          </select>
+          <div *ngIf="division?.invalid && division?.touched">
+            <small class="text-danger" *ngIf="division?.errors?.['required']">Division is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="category" class="form-label">Category</label>
+          <select class="form-select" required [class.is-invalid]="category?.invalid && category?.touched" formControlName="category" aria-label="Default select example">
+            <option *ngFor="let string of categoryList">{{string}}</option>
+            <!-- <option value="Quality B">Quality B</option>
+            <option value="Quality C">Quality C</option>
+            <option value="Quality C">Quality D</option> -->
+          </select>
+          <div *ngIf="category?.invalid && category?.touched">
+            <small class="text-danger" *ngIf="category?.errors?.['required']">Category is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="priority" class="form-label">Priority</label>
+          <select class="form-select" required [class.is-invalid]="priority?.invalid && priority?.touched" formControlName="priority" aria-label="Default select example">
+            <option *ngFor="let string of priorityList">{{string}}</option>
+            <!-- <option value="Low">Low</option>
+            <option value="Medium">Medium</option> -->
+          </select>
+          <div *ngIf="priority?.invalid && priority?.touched">
+            <small class="text-danger" *ngIf="priority?.errors?.['required']">Priority is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="department" class="form-label">Department</label>
+          <select class="form-select" required [class.is-invalid]="department?.invalid && department?.touched" formControlName="department" aria-label="Default select example">
+            <option *ngFor="let string of departmentList">{{string}}</option>
+            <!-- <option value="Finance">Finance</option>
+            <option value="Quality">Quality</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Stores">Stores</option> -->
+          </select>
+          <div *ngIf="department?.invalid && department?.touched">
+            <small class="text-danger" *ngIf="department?.errors?.['required']">Department is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="startdate" class="form-label">Start Date</label>
+          <input type="date" required [class.is-invalid]="startdate?.invalid && startdate?.touched" formControlName="startdate" class="form-control" id="inputStartDate">
+          <div *ngIf="startdate?.invalid && startdate?.touched">
+            <small class="text-danger" *ngIf="startdate?.errors?.['required']">StartDate is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="enddate" class="form-label">End Date</label>
+          <input type="date" required [class.is-invalid]="enddate?.invalid && enddate?.touched" formControlName="enddate" class="form-control" id="inputEndDate">
+          <div *ngIf="enddate?.invalid && enddate?.touched">
+            <small class="text-danger" *ngIf="enddate?.errors?.['required']">EndDate is required</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="location" class="form-label">Location</label>
+          <select class="form-select" required [class.is-invalid]="location?.invalid && location?.touched" formControlName="location" aria-placeholder="Location">
+            <option *ngFor="let string of locationList">{{string}}</option>
+            <!-- <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option> -->
+          </select>
+          <div *ngIf="location?.invalid && location?.touched">
+            <small class="text-danger" *ngIf="location?.errors?.['required']">Location is required</small>
+          </div>
+        </div>
+        <div class="bottom-text">Status: <strong>Registered</strong></div>
+
+       
+   
+  </div>

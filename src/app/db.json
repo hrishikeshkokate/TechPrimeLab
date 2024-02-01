@@ -1,0 +1,109 @@
+{
+  "user": [
+    {
+      "email": "hrishikeshkokate99@gmail.com",
+      "password": "Hrishikesh@99",
+      "id": "3ce9"
+    }
+  ],
+  "projectDetails": [
+    {
+      "id": "bb4b",
+      "projectName": "Quality",
+      "reason": "Transport",
+      "type": "Vendor",
+      "division": "Water Heater",
+      "category": "Quality D",
+      "priority": "Low",
+      "department": "Stores",
+      "startdate": "2024-01-01",
+      "enddate": "2024-01-21",
+      "location": "Delhi",
+      "status": "Running"
+    },
+    {
+      "id": "bf2f",
+      "projectName": "Testing",
+      "reason": "Dealership",
+      "type": "External",
+      "division": "Filters",
+      "category": "Quality B",
+      "priority": "Medium",
+      "department": "Fianance",
+      "startdate": "2024-01-06",
+      "enddate": "2024-01-17",
+      "location": "Mumbai",
+      "status": "Closed"
+    },
+    {
+      "id": "4055",
+      "projectName": "Development",
+      "reason": "Transport",
+      "type": "Vendor",
+      "division": "Pumps",
+      "category": "Quality C",
+      "priority": "Low",
+      "department": "Quality",
+      "startdate": "2024-01-13",
+      "enddate": "2024-01-17",
+      "location": "Mumbai",
+      "status": "Running"
+    },
+    {
+      "id": "8c98",
+      "projectName": "Java",
+      "reason": "Dealership",
+      "type": "External",
+      "division": "Glass",
+      "category": "Quality C",
+      "priority": "Medium",
+      "department": "Stores",
+      "startdate": "2024-01-21",
+      "enddate": "2024-01-22",
+      "location": "Delhi",
+      "status": "Closed"
+    },
+    {
+      "id": "68d9",
+      "projectName": "Angular",
+      "reason": "Dealership",
+      "type": "External",
+      "division": "Filters",
+      "category": "Quality B",
+      "priority": "Medium",
+      "department": "Quality",
+      "startdate": "2024-01-12",
+      "enddate": "2024-01-28",
+      "location": "Mumbai",
+      "status": "Running"
+    },
+    {
+      "id": "179b",
+      "projectName": "Sql",
+      "reason": "Dealership",
+      "type": "External",
+      "division": "Pumps",
+      "category": "Quality B",
+      "priority": "Medium",
+      "department": "Quality",
+      "startdate": "2024-01-12",
+      "enddate": "2024-01-22",
+      "location": "Mumbai",
+      "status": "Cancelled"
+    },
+    {
+      "id": "4914",
+      "projectName": "React",
+      "reason": "Dealership",
+      "type": "External",
+      "division": "Pumps",
+      "category": "Quality C",
+      "priority": "Medium",
+      "department": "Maintenance",
+      "startdate": "2024-01-24",
+      "enddate": "2024-01-30",
+      "location": "Delhi",
+      "status": "Closed"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<header class="col-md-12 p-0">
+    <nav class="side-navbar shadow">
+      <div routerLink="/dashboard" routerLinkActive="rectangle2" class="rectangle"></div>
+      <div routerLink="/dashboard" routerLinkActive="dashboard-logo2" class="dashboard-logo"></div>
+  
+      <div routerLink="/project-list" routerLinkActive="rectangle2" class="rectangle rectangle4"></div>
+      <div routerLink="/project-list" routerLinkActive="plist-logo2" class="plist-logo"></div>
+  
+      <div class="h-line"></div>
+  
+      <div routerLink="/create-project" routerLinkActive="rectangle2" class="rectangle rectangle3"></div>
+      <div routerLink="/create-project" routerLinkActive="cp-logo2" class="cp-logo"></div>
+  
+      <div (click)="logout()" class="logout-logo"></div>
+    </nav>
+    <nav class="top-navbar">
+      <p class="heading"> <img src="../../assets/images/back arrow.svg" width="8px" alt="">&nbsp;&nbsp;Dashboard&nbsp;&nbsp;</p>
+      <div (click)="logout()" class="toplogout-logo"></div>
+    </nav>
+  </header>
+<div class="container-fluid pr-md-0">
+    <div class="row">
+        <div class="col-md-12 dashboard-container">
+            <img src="../../assets/images/Logo.svg" alt="Symbol Image" class="symbol-image">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="project-count-list">
+                        <div class="shadow project-count">
+                            <p class="mt-2 ml-2 mb-0">Total Project</p>
+                            <h1 class="mt-0 ml-2 p-conut-no">{{totalProjectCount}}</h1>
+                        </div>
+                        <div class="shadow project-count">
+                            <p class="mt-2 ml-2 mb-0">Closed</p>
+                            <h1 class="mt-0 ml-2 p-conut-no">{{closedCount }}</h1>
+                        </div>
+                        <div class="shadow project-count">
+                            <p class="mt-2 ml-2 mb-0">Running</p>
+                            <h1 class="mt-0 ml-2 p-conut-no">{{runningCount }}</h1>
+                        </div>
+                        <div class="shadow project-count">
+                            <p class="mt-2 ml-2 mb-0">Closuer Delay</p>
+                            <h1 class="mt-0 ml-2 p-conut-no">{{closureDelayCount}}</h1>
+                        </div>
+                        <div class="shadow project-count">
+                            <p class="mt-2 ml-2 mb-0">Cancelled</p>
+                            <h1 class="mt-0 ml-2 p-conut-no">{{cancelledCount }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <h5 class="mt-4">Department wise - Total Vs Closed</h5>
+                </div>
+
+                <div class="chart-container">
+                    <canvas  id="MyChart" >{{ chart }}</canvas>
+              </div>
+                
+                  
+            </div>
+        </div>
+    </div>
+</div>

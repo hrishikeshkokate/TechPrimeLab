@@ -1,0 +1,256 @@
+Reset some default styles
+body,
+
+h1,
+h2,
+h3,
+p,
+form {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.new-page {
+    background-color: #ffffff;
+}
+.header-container {
+    background-image: url("../../assets/images/Header-bg.svg");
+    background-size: cover;
+    
+    height: 25vh;
+    
+    
+    margin-left: 90px;
+}
+button {
+    background-color: #0768a0;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    width: 40%;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 280px;
+    margin-top: 55px;
+}
+button:hover {
+    background-color: #0c7fc2;
+}
+.main-section {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(43, 40, 40, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+    width: 1230px;
+    height: 650px;
+    left: 100px;
+    top: 120px;
+    
+}
+.symbol-image {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    
+}
+.side-navbar{
+    float: left;
+    position: relative;
+    height: 768px;
+    width: 5%;
+    background-color: white;
+    padding-top: 250px;
+}
+.rectangle{
+    float: left;
+    height: 31px;
+    width: 5px;
+    border-radius: 0 52px 52px 0;
+}
+.rectangle2{
+    background-color: #025AAB;  
+}
+.dashboard-logo{
+    width: 25px;
+    height: 20px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    background-image: url('../../assets/images/Dashboard.svg');
+    background-size: 100%;
+}
+.plist-logo{
+    width: 22px;
+    height: 19px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    background-image: url('../../assets/images/Project-list.svg');
+    background-size: 100%;
+}
+.cp-logo{
+    width: 21px;
+    height: 21px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    background-image: url('../../assets/images/create-project.svg');
+    background-size: 100%;
+}
+.dashboard-logo2{
+    background-image: url('../../assets/images/Dashboard-active.svg');
+}
+.plist-logo2{
+    background-image: url('../../assets/images/Project-list-active.svg');
+}
+.cp-logo2{
+    background-image: url('../../assets/images/create-project-active.svg');
+}
+.h-line {
+    float: left;
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    height: 1px;
+    width: 33px;
+    border: 1px solid #979797;
+    opacity: 0.53;
+}
+.logout-logo{
+    float: left;
+    margin-top: 250px;
+    margin-left: 25px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/images/Logout.svg');
+    background-size: 100%;
+}
+.toplogout-logo{
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/images/Logout.svg');
+    background-size: 100%;
+    display: none;
+}
+
+.top-navbar{
+    float: left;
+    height: 160px;
+    width:95%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('../../assets/images/Header-bg.svg');
+}
+
+.heading{
+    float: left;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.logo{
+    float: right;
+    position: relative;
+    height: 60px;
+    top: 20px;
+    right:650px;
+}
+
+
+@media (max-width: 768px) {
+    .side-navbar{
+        position: fixed;
+        height: 60px;
+        width: 100%;
+        bottom: 0px;
+        padding: 0px;
+        border-radius: 50px 50px 0 0;
+        z-index: 9999999;
+    }
+    .rectangle{
+        float: left;
+        height: 8px;
+        width: 60px;
+        margin-top: 53px;
+        margin-left: 50px;
+        margin-right: -50px;
+        border-radius: 52px 52px 0 0;
+    }
+    .rectangle4{
+        margin-left: 152px;
+    }
+    .rectangle3{
+        position:fixed;
+        left: 115px;
+    }
+    .dashboard-logo{
+        position: relative;
+        width: 30px;
+        height: 25px;
+        top: 10px;
+        left: -10px;
+    }
+    .plist-logo{
+        width: 26px;
+        height: 24px;
+        position: absolute;
+        top: 10px;
+        right: 40px;
+    }
+    .cp-logo{
+        width: 27px;
+        height: 24px;
+        position: absolute;
+        top: 10px;
+        left: 165px;
+    }
+    .h-line{
+        display: none;
+    }
+    .top-navbar{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 70px;
+        background-size:cover;
+        z-index: 9999999;
+
+    }
+    .heading{
+        margin-top: 20px;
+        margin-left: 30px;
+        font-weight: bold;
+    }
+    .logo{
+        display: none;
+    }
+    .logout-logo{
+        display: none;
+    }
+    .toplogout-logo{
+        display: block;
+        float: right;
+        margin-top: 25px;
+        margin-right: 20px;
+    }
+}
+.bottom-text{
+    text-align: end;
+}
+

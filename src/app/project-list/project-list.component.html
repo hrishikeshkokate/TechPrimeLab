@@ -1,0 +1,131 @@
+<header class="col-md-12 p-0">
+    <nav class="side-navbar shadow">
+      <div routerLink="/dashboard" routerLinkActive="rectangle2" class="rectangle"></div>
+      <div routerLink="/dashboard" routerLinkActive="dashboard-logo2" class="dashboard-logo"></div>
+  
+      <div routerLink="/project-list" routerLinkActive="rectangle2" class="rectangle rectangle4"></div>
+      <div routerLink="/project-list" routerLinkActive="plist-logo2" class="plist-logo"></div>
+  
+      <div class="h-line"></div>
+  
+      <div routerLink="/create-project" routerLinkActive="rectangle2" class="rectangle rectangle3"></div>
+      <div routerLink="/create-project" routerLinkActive="cp-logo2" class="cp-logo"></div>
+  
+      <div (click)="logout()" class="logout-logo"></div>
+    </nav>
+    <nav class="top-navbar">
+      <p class="heading"> <img src="../../assets/images/back arrow.svg" width="8px" alt="">&nbsp;&nbsp;Project Listing&nbsp;&nbsp;</p>
+      <div (click)="logout()" class="toplogout-logo"></div>
+    </nav>
+  </header>
+<div class="header-container">
+    <img src="../../assets/images/Logo.svg" alt="Symbol Image" class="symbol-image">
+    <div class="main-section">
+        <div class="container text-center">
+            <div class="search-sort-container">
+                <div class="search-container">
+                    <div class="Search">
+                      <input [(ngModel)]="searchText" (input)="performSearch()" class="d-flex" type="search" placeholder="Search" aria-label="Search">
+                    </div>
+                  </div>
+                <div class="sort-container">
+                  Sort By:
+                  <select class="form" aria-label="Default select example" (change)="getSelectedvalue($event)">
+                    <option selected>Priority</option>
+                    <option value="1">Project name</option>
+                    <option value="2">Reason</option>
+                    <option value="3">Type</option>
+                    <option value="4">Division</option>
+                    <option value="5">Category</option>
+                    <option value="6">Priority</option>
+                    <option value="7">Dept</option>
+                    <option value="8">Location</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Display filtered projects in a table-like format -->
+<!-- <div *ngIf="filteredProjects.length > 0">
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Project name</th>
+            <th>Reason</th>
+            <th>Type</th>
+            <th>Division</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Dept.</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of filteredProjects">
+            <td >{{ project.projectName }} <br>
+                <small>{{project.startdate}} to {{project.enddate}}</small>
+            </td>
+            <td >{{ project.reason }}</td>
+            <td >{{ project.type }}</td>
+            <td >{{ project.division }}</td>
+            <td >{{ project.category }}</td>
+            <td >{{ project.priority }}</td>
+            <td >{{ project.department }}</td>
+            <td >{{ project.location }}</td>
+            <td >{{ project.status }}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" (click)="updateStatus(project,1)">Start</button>&nbsp;
+                <button type="button" class="btn btn-outline-primary" (click)="updateStatus(project,2)">Close</button>&nbsp;
+                <button type="button" class="btn btn-outline-primary" (click)="updateStatus(project,3)">Cancel</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  <div *ngIf="filteredProjects.length > 0">
+    <table class="table">
+      <thead>
+          <tr >
+              <th>Project name</th>
+              <th>Reason</th>
+              <th>Type</th>
+              <th>Division</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Dept.</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          @for(p of filteredProjects; track p.id){
+          <tr>
+              <td >{{ p.projectName }} <br>
+                  <small>{{p.startdate}} to {{p.enddate}}</small>
+              </td>
+              <td >{{ p.reason }}</td>
+              <td >{{ p.type }}</td>
+              <td >{{ p.division }}</td>
+              <td >{{ p.category }}</td>
+              <td >{{ p.priority }}</td>
+              <td >{{ p.department }}</td>
+              <td >{{ p.location }}</td>
+              <td >{{ p.status }}</td>
+              <td>
+                  <button type="button" class="btn btn-outline-primary" (click)="updateStatus(p,1)">Start</button>&nbsp;
+                  <button type="button" class="btn btn-outline-primary" (click)="updateStatus(p,2)">Close</button>&nbsp;
+                  <button type="button" class="btn btn-outline-primary" (click)="updateStatus(p,3)">Cancel</button>
+              </td>
+          </tr>
+          }
+      </tbody>
+  </table>
+
+  </div>
+            
+        </div>
+    </div>
+    
+   
+</div>
